@@ -28,3 +28,4 @@
 ## Code
 
 - Prefer pure functions and immutable data. Local mutation is fine.
+- Prefer JSDoc (`/** ... */`) when documenting a declaration so the information appears in editor hovers at usage sites. Use regular comments (`//`) for local implementation details and rationale.
