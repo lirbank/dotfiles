@@ -1,6 +1,6 @@
 # Personal dotfiles
 
-Personal skills and global instructions for Codex and Claude Code.
+Personal skills, global instructions and helper scripts for Codex and Claude Code.
 
 ## Install
 
@@ -25,3 +25,7 @@ To try an installation in a temporary directory, pass a destination.
 ```
 
 Edit the repository copies because installation overwrites the destination files. Keep shared skill instructions consistent between `codex/skills/` and `claude/skills/`, which use different invocation metadata.
+
+## Scripts
+
+The installer places `bin/up` in `~/.local/bin`. Run `up` to upgrade Bun, Claude Code, Codex, pnpm and Homebrew packages in one go.

@@ -11,6 +11,7 @@ const files: readonly (readonly [string, string])[] = [
   ["codex/skills/wrap-up/agents/openai.yaml", ".codex/skills/wrap-up/agents/openai.yaml"],
   ["claude/CLAUDE.md", ".claude/CLAUDE.md"],
   ["claude/skills/wrap-up/SKILL.md", ".claude/skills/wrap-up/SKILL.md"],
+  ["bin/up", ".local/bin/up"],
 ];
 
 if (process.argv.length > 3) {

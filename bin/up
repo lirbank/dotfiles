@@ -1,0 +1,10 @@
+#!/bin/sh
+# Upgrade the tools installed outside of package.json.
+set -eu
+
+bun upgrade
+claude update
+codex update
+pnpm self-update
+brew update
+brew upgrade --yes
