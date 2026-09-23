@@ -29,3 +29,4 @@
 
 - Prefer pure functions and immutable data. Local mutation is fine.
 - Prefer JSDoc (`/** ... */`) when documenting a declaration so the information appears in editor hovers at usage sites. Use regular comments (`//`) for local implementation details and rationale.
+- Only export symbols that are used outside the module. If code is kept for future use and not yet referenced, say so in a comment and suppress the unused-symbol lint warning on that line.
