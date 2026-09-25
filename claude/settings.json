@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "fable",
+  "effortLevel": "xhigh",
+  "switchModelsOnFlag": false,
+  "agentPushNotifEnabled": true,
+  "attribution": false
+}

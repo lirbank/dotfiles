@@ -1,6 +1,6 @@
 # Personal dotfiles
 
-Personal skills, global instructions and helper scripts for Codex and Claude Code.
+Personal skills, global instructions, settings and helper scripts for Codex and Claude Code.
 
 ## Install
 
@@ -16,7 +16,7 @@ Or run with Bun.
 bun install.ts
 ```
 
-The installer copies the files listed in `install.ts` into your home directory. It creates missing directories and overwrites those files without prompting. It leaves unrelated files alone. Source paths resolve relative to the installer, so you can run it from any directory.
+The installer copies the files listed in `install.ts` into your home directory. It leaves unrelated files alone. Source paths resolve relative to the installer, so you can run it from any directory. When an installed file differs from the repository copy, it shows the diff and asks which side to write. Ctrl+C aborts so you can reconcile them by hand.
 
 To try an installation in a temporary directory, pass a destination.
 
@@ -24,7 +24,7 @@ To try an installation in a temporary directory, pass a destination.
 ./install.ts "$(mktemp -d)"
 ```
 
-Edit the repository copies because installation overwrites the destination files. Keep shared skill instructions consistent between `codex/skills/` and `claude/skills/`, which use different invocation metadata.
+Keep shared skill instructions consistent between `codex/skills/` and `claude/skills/`, which use different invocation metadata.
 
 ## Scripts
 
