@@ -15,8 +15,9 @@
 ## Writing
 
 - Use sentence case instead of title case.
-- In prose, write like a human. Avoid semicolons, colons, and dashes unless they clearly help deliver the message.
+- In prose, avoid semicolons, colons, and dashes. Write sentences that flow naturally without them.
 - Never hard-wrap prose in Markdown.
+- Prefer explicit referents when repetition improves clarity. Do not avoid pronouns mechanically.
 
 ## Chat
 
