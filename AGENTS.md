@@ -10,7 +10,7 @@
 
 - Max five words for Git branch names.
 - Max five words for Git commit messages.
-- Prefix branches with "lirbank/" (not counted in the word limit), except in repos under `lirbank` or `starmode-base`.
+- Prefix branches with "lirbank/" (not counted in the word limit), except in repos under `lirbank`, `starmode-base`, or `lift-ax`.
 
 ## Writing
 
