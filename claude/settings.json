@@ -1,10 +1,14 @@
 {
-  "permissions": {
-    "defaultMode": "auto"
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
   },
-  "model": "fable",
-  "effortLevel": "xhigh",
-  "switchModelsOnFlag": false,
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
+    }
+  },
   "agentPushNotifEnabled": true,
-  "attribution": false
+  "switchModelsOnFlag": false
 }
