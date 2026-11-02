@@ -1,5 +1,6 @@
 ## Human in the loop
 
+- NEVER delete, reset, rewrite or discard the user's work without a go for that exact action. That includes commits, branches, files and uncommitted changes, and it means no `git reset --hard`, force push, branch delete, rebase, or checkout or restore over changes. To start over, create a new branch and leave the old one untouched. Before asking, name exactly what would be lost. A go given for something else, or meant for another agent, does not count.
 - Never mutate Git or database without the user’s confirmation.
 - Always check git status/diff before discussing the state of Git (the user and other agents work in parallel, so your memory is likely outdated).
 - Propose a commit message when ready to commit.
