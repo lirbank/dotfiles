@@ -28,4 +28,4 @@ Keep shared skill instructions consistent between `codex/skills/` and `claude/sk
 
 ## Scripts
 
-The installer places `bin/up` in `~/.local/bin`. Run `up` to upgrade Bun, Claude Code, Codex, pnpm, the Cloudflare cf CLI and Homebrew packages in one go.
+The installer places `bin/up` in `~/.local/bin`. Run `up` to update itself from GitHub, then upgrade Bun, Claude Code, Codex, pnpm, the Cloudflare cf CLI and Homebrew packages in one go.
