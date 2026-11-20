@@ -6,5 +6,6 @@ bun upgrade
 claude update
 codex update
 pnpm self-update
+npm install --global cf@latest
 brew update
 brew upgrade --yes
