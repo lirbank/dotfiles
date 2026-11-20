@@ -2,6 +2,18 @@
 # Upgrade the tools installed outside of package.json.
 set -eu
 
+# Replace this script with the latest from GitHub and rerun it if it changed.
+self=$0
+latest=$(mktemp "$self.XXXXXX")
+if curl -fsSL https://raw.githubusercontent.com/lirbank/dotfiles/main/bin/up -o "$latest" &&
+  [ -s "$latest" ] && ! cmp -s "$latest" "$self"; then
+  chmod +x "$latest"
+  mv "$latest" "$self"
+  echo "up: updated itself, restarting"
+  exec "$self" "$@"
+fi
+rm -f "$latest"
+
 bun upgrade
 claude update
 codex update
