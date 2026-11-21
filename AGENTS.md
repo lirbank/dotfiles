@@ -14,10 +14,9 @@
 
 ## Writing
 
-- Write specs and docs in a plain, professional voice, only as long as the reader needs. No slogans, punchlines, essay dramaturgy, filler sections, or recaps.
 - Use sentence case for headings and titles.
-- In prose, avoid semicolons, colons, em dashes and en dashes. Split or rephrase the sentence instead of swapping in other punctuation.
 - Prefer explicit referents when repetition improves clarity. Do not avoid pronouns mechanically.
+- Write specs and docs in a plain, professional voice, only as long as the reader needs. No slogans, punchlines, essay dramaturgy, filler sections, or recaps.
 
 ## Chat
 
