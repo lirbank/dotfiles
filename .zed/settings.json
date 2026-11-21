@@ -1,0 +1,12 @@
+{
+  "format_on_save": "on",
+  "formatter": {
+    "external": {
+      "command": "bun",
+      "arguments": ["fmt", "--stdin-filepath", "{buffer_path}"]
+    }
+  },
+  "languages": {
+    "Git Ignore": { "format_on_save": "off" }
+  }
+}
