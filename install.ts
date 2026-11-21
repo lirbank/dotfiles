@@ -10,15 +10,15 @@ import { fileURLToPath } from "node:url";
 const files: readonly (readonly [string, string])[] = [
   ["AGENTS.md", ".agents/AGENTS.md"],
   ["AGENTS.md", ".agents/CLAUDE.md"],
-  ["AGENTS.md", ".codex/AGENTS.md"],
-  ["AGENTS.md", ".codex/CLAUDE.md"],
   ["AGENTS.md", ".claude/AGENTS.md"],
   ["AGENTS.md", ".claude/CLAUDE.md"],
-  ["codex/skills/wrap-up/SKILL.md", ".codex/skills/wrap-up/SKILL.md"],
-  ["codex/skills/wrap-up/agents/openai.yaml", ".codex/skills/wrap-up/agents/openai.yaml"],
+  ["AGENTS.md", ".codex/AGENTS.md"],
+  ["AGENTS.md", ".codex/CLAUDE.md"],
+  ["bin/up", ".local/bin/up"],
   ["claude/settings.json", ".claude/settings.json"],
   ["claude/skills/wrap-up/SKILL.md", ".claude/skills/wrap-up/SKILL.md"],
-  ["bin/up", ".local/bin/up"],
+  ["codex/skills/wrap-up/agents/openai.yaml", ".codex/skills/wrap-up/agents/openai.yaml"],
+  ["codex/skills/wrap-up/SKILL.md", ".codex/skills/wrap-up/SKILL.md"],
 ];
 
 if (process.argv.length > 3) {
