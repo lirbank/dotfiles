@@ -14,9 +14,12 @@ const files: readonly (readonly [string, string])[] = [
   ["AGENTS.md", ".claude/CLAUDE.md"],
   ["AGENTS.md", ".codex/AGENTS.md"],
   ["AGENTS.md", ".codex/CLAUDE.md"],
+  ["agents/skills/user-skill-test-agents/SKILL.md", ".agents/skills/user-skill-test-agents/SKILL.md"],
   ["bin/up", ".local/bin/up"],
   ["claude/settings.json", ".claude/settings.json"],
+  ["claude/skills/user-skill-test-claude/SKILL.md", ".claude/skills/user-skill-test-claude/SKILL.md"],
   ["claude/skills/wrap-up/SKILL.md", ".claude/skills/wrap-up/SKILL.md"],
+  ["codex/skills/user-skill-test-codex/SKILL.md", ".codex/skills/user-skill-test-codex/SKILL.md"],
   ["codex/skills/wrap-up/agents/openai.yaml", ".codex/skills/wrap-up/agents/openai.yaml"],
   ["codex/skills/wrap-up/SKILL.md", ".codex/skills/wrap-up/SKILL.md"],
 ];
