@@ -14,13 +14,25 @@ const files: readonly (readonly [string, string])[] = [
   ["AGENTS.md", ".claude/CLAUDE.md"],
   ["AGENTS.md", ".codex/AGENTS.md"],
   ["AGENTS.md", ".codex/CLAUDE.md"],
-  ["agents/skills/user-skill-test-agents/SKILL.md", ".agents/skills/user-skill-test-agents/SKILL.md"],
+  [
+    "agents/skills/user-skill-test-agents/SKILL.md",
+    ".agents/skills/user-skill-test-agents/SKILL.md",
+  ],
   ["bin/up", ".local/bin/up"],
   ["claude/settings.json", ".claude/settings.json"],
-  ["claude/skills/user-skill-test-claude/SKILL.md", ".claude/skills/user-skill-test-claude/SKILL.md"],
+  [
+    "claude/skills/user-skill-test-claude/SKILL.md",
+    ".claude/skills/user-skill-test-claude/SKILL.md",
+  ],
   ["claude/skills/wrap-up/SKILL.md", ".claude/skills/wrap-up/SKILL.md"],
-  ["codex/skills/user-skill-test-codex/SKILL.md", ".codex/skills/user-skill-test-codex/SKILL.md"],
-  ["codex/skills/wrap-up/agents/openai.yaml", ".codex/skills/wrap-up/agents/openai.yaml"],
+  [
+    "codex/skills/user-skill-test-codex/SKILL.md",
+    ".codex/skills/user-skill-test-codex/SKILL.md",
+  ],
+  [
+    "codex/skills/wrap-up/agents/openai.yaml",
+    ".codex/skills/wrap-up/agents/openai.yaml",
+  ],
   ["codex/skills/wrap-up/SKILL.md", ".codex/skills/wrap-up/SKILL.md"],
 ];
 
@@ -33,9 +45,15 @@ const destinationRoot = resolve(process.argv[2] ?? homedir());
 
 type Resolution = "target" | "source";
 
-const choices: Partial<Record<string, Resolution>> = { t: "target", s: "source" };
+const choices: Partial<Record<string, Resolution>> = {
+  t: "target",
+  s: "source",
+};
 
-type Prompter = { readonly rl: Interface; readonly lines: AsyncIterator<string> };
+type Prompter = {
+  readonly rl: Interface;
+  readonly lines: AsyncIterator<string>;
+};
 
 // Piped input is read line by line. Created on the first prompt so runs without differences never touch stdin.
 let prompter: Prompter | undefined;
@@ -73,7 +91,8 @@ async function ask(): Promise<Resolution | null> {
   process.stdout.write("Write [t]arget or [s]ource? ");
   while (true) {
     const answer = await (tty ? readKey() : readLine());
-    const resolution = answer === null ? null : choices[answer.trim().toLowerCase()];
+    const resolution =
+      answer === null ? null : choices[answer.trim().toLowerCase()];
     if (resolution === undefined) continue;
     if (tty) process.stdin.setRawMode(false);
     console.log(resolution ?? "");
@@ -108,7 +127,9 @@ for (const [source, destination] of files) {
   const resolution = await ask();
 
   if (resolution === null) {
-    console.log("Aborted. Fix the difference by hand and run the installer again.");
+    console.log(
+      "Aborted. Fix the difference by hand and run the installer again.",
+    );
     process.exitCode = 1;
     break;
   }
