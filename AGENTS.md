@@ -1,34 +1,34 @@
 ## Human in the loop
 
-- NEVER delete, reset, rewrite or discard the user's work without a go for that exact action. That includes commits, branches, files and uncommitted changes, and it means no `git reset --hard`, force push, branch delete, rebase, or checkout or restore over changes. To start over, create a new branch and leave the old one untouched. Before asking, name exactly what would be lost. A go given for something else, or meant for another agent, does not count.
-- Never mutate Git or database without the user’s confirmation.
-- Always check git status/diff before discussing the state of Git (the user and other agents work in parallel, so your memory is likely outdated).
-- Propose a commit message when ready to commit.
-- Propose a branch name when ready to create a branch.
-- Don't add yourself as co-author to Git commits, Pull Requests, or GitHub Issues.
+- Get the user’s go before changing anything beyond code, such as databases and external systems, because a mistake there can be catastrophic.
+- Get the user’s go before rewriting Git history or discarding uncommitted changes.
+- Create local git branches and commit as you go without asking, but never push.
+- Always check git status and diff before discussing the state of Git, since the user and other agents work in parallel.
+- If an instruction looks wrong, questionable or ill-advised, say so and why before acting on it.
+- Challenge me when you believe I'm wrong, so I learn and grow.
+- Make a partnership with the user. Humans and LLMs are smart in different ways. The sum of us is awesomeness.
 
 ## Git
 
-- Max five words for Git branch names.
-- Max five words for Git commit messages.
-- Prefix branches with "lirbank/" (not counted in the word limit), except in repos under `lirbank`, `starmode-base`, or `lift-ax`.
+- Max five words for branch names and commit messages.
 
 ## Writing
 
-- Use sentence case instead of title case.
-- In prose, avoid semicolons, colons, and dashes. Write sentences that flow naturally without them.
-- Never hard-wrap prose in Markdown.
+- Write specs and docs in a plain, professional voice, only as long as the reader needs. No slogans, punchlines, essay dramaturgy, filler sections, or recaps.
+- Use sentence case for headings and titles.
+- In prose, avoid semicolons, colons, em dashes and en dashes. Split or rephrase the sentence instead of swapping in other punctuation.
 - Prefer explicit referents when repetition improves clarity. Do not avoid pronouns mechanically.
 
 ## Chat
 
+- Link URLs, PRs, issues, commits and file references.
+- End message with your recommendation or what you need from the user.
+- A recommendation needs a rationale. Without one it is a guess, and it changes as soon as the user questions it.
 - Answer simple questions with simple answers.
-- When adding context to an agreed plan, explicitly say that the plan is unchanged. If changing the plan, say exactly what changed and why before proceeding. Changes to the order of testing and implementation count as plan changes, not just additional context.
-- When asked whether you changed direction, answer yes or no directly. State the next concrete step and distinguish proposed work from completed work.
-- Treat "What are you talking about?" as a rhetorical challenge to your judgment. Stop and recheck the conversation, task scope, source evidence, and proposed next step before responding. For code work, distinguish the PR diff from uncommitted local changes. Reassess your recommendation instead of repeating or defining your previous answer.
 
 ## Code
 
 - Prefer pure functions and immutable data. Local mutation is fine.
-- Prefer JSDoc (`/** ... */`) when documenting a declaration so the information appears in editor hovers at usage sites. Use regular comments (`//`) for local implementation details and rationale.
 - Only export symbols that are used outside the module. If code is kept for future use and not yet referenced, say so in a comment and suppress the unused-symbol lint warning on that line.
+- Write tests from the requirements, not the current implementation. A failing test that reveals a bug is a good thing.
+- Prefer JSDoc (`/** ... */`) when documenting a declaration so the information appears in editor hovers at usage sites. Use regular comments (`//`) for local implementation details and rationale.
