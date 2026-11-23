@@ -18,6 +18,6 @@ bun upgrade
 claude update
 codex update
 pnpm self-update
-npm install --global cf@latest
+npm install --global --allow-scripts=workerd cf@latest
 brew update
 brew upgrade --yes
