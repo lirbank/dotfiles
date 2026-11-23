@@ -3,16 +3,23 @@
 set -eu
 
 # Replace this script with the latest from GitHub and rerun it if it changed.
+# The download is pinned to the commit that main points at, because the
+# raw.githubusercontent.com URL for a branch is cached for five minutes.
 self=$0
+commit=$(git ls-remote https://github.com/lirbank/dotfiles refs/heads/main | cut -f1)
+if [ -z "$commit" ]; then
+  echo "up: could not resolve the latest commit of main" >&2
+  exit 1
+fi
 latest=$(mktemp "$self.XXXXXX")
-if curl -fsSL https://raw.githubusercontent.com/lirbank/dotfiles/main/bin/up -o "$latest" &&
-  [ -s "$latest" ] && ! cmp -s "$latest" "$self"; then
+trap 'rm -f "$latest"' EXIT
+curl -fsSL "https://raw.githubusercontent.com/lirbank/dotfiles/$commit/bin/up" -o "$latest"
+if ! cmp -s "$latest" "$self"; then
   chmod +x "$latest"
   mv "$latest" "$self"
   echo "up: updated itself, restarting"
   exec "$self" "$@"
 fi
-rm -f "$latest"
 
 bun upgrade
 claude update
