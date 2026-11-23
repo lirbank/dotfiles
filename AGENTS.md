@@ -14,9 +14,10 @@
 
 ## Writing
 
+- Before writing a document, name the reader and what they do after reading it.
 - Use sentence case for headings and titles.
 - Prefer explicit referents when repetition improves clarity. Do not avoid pronouns mechanically.
-- Write specs and docs in a plain, professional voice, only as long as the reader needs. No slogans, punchlines, essay dramaturgy, filler sections, or recaps.
+- Write specs and docs in a ˝plain, professional voice, only as long as the reader needs. No slogans, punchlines, essay dramaturgy, filler sections, or recaps.
 
 ## Chat
 
