@@ -6,6 +6,7 @@ import { homedir } from "node:os";
 import { dirname, resolve } from "node:path";
 import { createInterface, type Interface } from "node:readline/promises";
 import { fileURLToPath } from "node:url";
+import { checkComputerName } from "./computer-name.ts";
 
 const files: readonly (readonly [string, string])[] = [
   ["AGENTS.md", ".agents/AGENTS.md"],
@@ -144,3 +145,8 @@ for (const [source, destination] of files) {
 }
 
 prompter?.rl.close();
+
+// The computer name belongs to this Mac, so a trial installation into another directory skips the check.
+if (process.argv[2] === undefined && process.exitCode === undefined) {
+  checkComputerName();
+}

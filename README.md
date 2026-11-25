@@ -18,6 +18,8 @@ bun install.ts
 
 The installer copies the files listed in `install.ts` into your home directory. It leaves unrelated files alone. Source paths resolve relative to the installer, so you can run it from any directory. When an installed file differs from the repository copy, it shows the diff and asks which side to write. Ctrl+C aborts so you can reconcile them by hand.
 
+After the files, the installer checks the Mac's computer name against the name in `computer-name.ts`. It changes nothing. On a mismatch it prints the `sudo scutil` commands that set the name.
+
 To try an installation in a temporary directory, pass a destination.
 
 ```sh
